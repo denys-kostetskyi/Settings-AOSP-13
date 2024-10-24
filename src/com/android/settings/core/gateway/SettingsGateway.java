@@ -17,6 +17,7 @@
 package com.android.settings.core.gateway;
 
 import com.android.settings.AllInOneTetherSettings;
+import com.android.settings.CustomSettingsFragment;
 import com.android.settings.DisplaySettings;
 import com.android.settings.IccLockSettings;
 import com.android.settings.MainClear;
@@ -311,6 +312,7 @@ public class SettingsGateway {
             AutomaticStorageManagerSettings.class.getName(),
             StorageDashboardFragment.class.getName(),
             SystemDashboardFragment.class.getName(),
+            CustomSettingsFragment.class.getName(),
             NetworkDashboardFragment.class.getName(),
             ConnectedDeviceDashboardFragment.class.getName(),
             UsbDetailsFragment.class.getName(),

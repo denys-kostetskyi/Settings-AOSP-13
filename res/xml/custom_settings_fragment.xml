@@ -1,0 +1,50 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="custom_settings_fragment"
+    android:persistent="false"
+    android:title="@string/custom_settings_label">
+
+    <PreferenceCategory
+        android:key="custom_general_settings_category"
+        android:title="@string/custom_general_settings"
+        settings:keywords="@string/custom_general_settings_keywords">
+
+        <SwitchPreference
+            android:key="custom_wifi_switch"
+            android:title="@string/custom_wi_fi"
+            android:summary="@string/custom_wi_fi_switch_summary"
+            android:defaultValue="true"
+            settings:keywords="@string/custom_wi_fi_keywords" />
+
+        <SwitchPreference
+            android:key="custom_bluetooth_switch"
+            android:title="@string/custom_bluetooth"
+            android:summary="@string/custom_bluetooth_switch_summary"
+            settings:keywords="@string/custom_bluetooth_keywords" />
+
+        <SwitchPreference
+            android:key="custom_notifications_switch"
+            android:title="@string/custom_notifications"
+            android:summary="@string/custom_notifications_switch_summary"
+            settings:keywords="@string/custom_notifications_keywords" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="custom_advanced_settings_category"
+        android:title="@string/custom_advanced_settings"
+        settings:keywords="@string/custom_advanced_settings_keywords">
+
+        <Preference
+            android:key="custom_developer_settings"
+            android:title="@string/custom_developer_settings"
+            android:summary="@string/custom_developer_settings_summary"
+            settings:keywords="@string/custom_developer_settings_keywords" />
+
+        <Preference
+            android:key="custom_factory_reset"
+            android:title="@string/custom_factory_reset"
+            android:summary="@string/custom_factory_reset_summary"
+            settings:keywords="@string/custom_factory_reset_keywords" />
+    </PreferenceCategory>
+</PreferenceScreen>

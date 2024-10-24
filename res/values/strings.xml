@@ -14545,4 +14545,28 @@
     <!-- [CHAR LIMIT=NONE] Hint for QR code process failure -->
     <string name="bt_le_audio_qr_code_is_not_valid_format">QR code isn\u0027t a valid format</string>
 
+    <string name="custom_settings_label">Custom Settings</string>
+    <string name="custom_settings_summary">Configure custom Settings</string>
+    <string name="custom_general_settings">General Settings</string>
+    <string name="custom_wi_fi">Wi-Fi</string>
+    <string name="custom_wi_fi_switch_summary">Enable or disable Wi-Fi</string>
+    <string name="custom_bluetooth">Bluetooth</string>
+    <string name="custom_bluetooth_switch_summary">Enable or disable Bluetooth</string>
+    <string name="custom_notifications">Notifications</string>
+    <string name="custom_notifications_switch_summary">Enable or disable Notifications</string>
+    <string name="custom_advanced_settings">Advanced Settings</string>
+    <string name="custom_developer_settings">Developer Settings</string>
+    <string name="custom_developer_settings_summary">Open Developer Settings</string>
+    <string name="custom_open">Open</string>
+    <string name="custom_factory_reset">Factory Reset</string>
+    <string name="custom_factory_reset_summary">Reset to factory settings</string>
+    <string name="custom_reset">Reset</string>
+    <string name="custom_general_settings_keywords">general, settings, custom</string>
+    <string name="custom_wi_fi_keywords">Wi-Fi, wireless, internet, network</string>
+    <string name="custom_bluetooth_keywords">bluetooth, wireless, connectivity</string>
+    <string name="custom_notifications_keywords">notifications, alerts, sounds</string>
+    <string name="custom_advanced_settings_keywords">advanced, developer, options</string>
+    <string name="custom_developer_settings_keywords">developer, tools, advanced</string>
+    <string name="custom_factory_reset_keywords">reset, factory, settings, clear</string>
+
 </resources>
