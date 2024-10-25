@@ -1,6 +1,7 @@
 package com.android.settings;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.content.Context;
 import android.provider.SearchIndexableResource;
 
@@ -12,6 +13,7 @@ import androidx.preference.SwitchPreference;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.search.SearchIndexableRaw;
@@ -26,6 +28,12 @@ import java.util.List;
 public class CustomSettingsFragment extends DashboardFragment {
 
     private static final String TAG = "CustomSettingsFragment";
+
+    private static List<AbstractPreferenceController> buildPreferenceControllers(Context context) {
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new CustomSettingsController(context));
+        return controllers;
+    }
 
     @Override
     public int getMetricsCategory() {
@@ -42,24 +50,23 @@ public class CustomSettingsFragment extends DashboardFragment {
         return R.xml.custom_settings_fragment;
     }
 
+    @Override
+    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+        return buildPreferenceControllers(context);
+    }
+
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER = new BaseSearchIndexProvider() {
-        /*@Override
+        @Override
         public List<SearchIndexableResource> getXmlResourcesToIndex(Context context, boolean enabled) {
             final SearchIndexableResource sir = new SearchIndexableResource(context);
             sir.xmlResId = R.xml.custom_settings_fragment;
+            Log.d(TAG, "getXmlResourcesToIndex called! " + sir.toString());
             return Arrays.asList(sir);
-        }*/
+        }
 
         @Override
-        public List<SearchIndexableRaw> getRawDataToIndex(Context context, boolean enabled) {
-            final List<SearchIndexableRaw> result = new ArrayList<>();
-            SearchIndexableRaw data = new SearchIndexableRaw(context);
-            data.title = context.getString(R.string.custom_general_settings);
-            data.screenTitle = context.getString(R.string.custom_general_settings);
-            data.keywords = context.getString(R.string.custom_general_settings_keywords);
-            data.key = "custom_general_settings_category";
-            result.add(data);
-            return result;
+        public List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+            return buildPreferenceControllers(context);
         }
     };
 }
